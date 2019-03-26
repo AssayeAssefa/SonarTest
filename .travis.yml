@@ -1,7 +1,13 @@
-jdk: openjdk10
+language: java
+sudo: false
+install: true
+
 script:
-  - jdk_switcher use openjdk10
-  - # do stuff with OpenJDK 10
-  - export JAVA_HOME=$HOME/openjdk11
-  - $TRAVIS_BUILD_DIR/install-jdk.sh --install openjdk11 --target $JAVA_HOME
-  - # do stuff with open OpenJDK 11
+  - mvn clean test
+
+
+mvn sonar:sonar \
+  -Dsonar.projectKey=AssayeAssefa_SonarTest \
+  -Dsonar.organization=assayeassefa-github \
+  -Dsonar.host.url=https://sonarcloud.io \
+  -Dsonar.login=b5ca1c306e75bc3bb1d127693636b7fb44be67c5
