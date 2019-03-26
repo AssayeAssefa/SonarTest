@@ -1,16 +1,7 @@
-language: node_js
-node_js:
-    - "6.9"
-
-branches:
-    only:
-        - master
-
-before_script:
-    - npm install -g @angular/cli
-
+jdk: openjdk10
 script:
-    - ng build --prod
-    - npm install sonar-scanner
-    - sonar-scanner -Dsonar.projectKey=AssayeAssefa_SonarTest -Dsonar.organization=assayeassefa-github 
--Dsonar.sources=src -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
+  - jdk_switcher use openjdk10
+  - # do stuff with OpenJDK 10
+  - export JAVA_HOME=$HOME/openjdk11
+  - $TRAVIS_BUILD_DIR/install-jdk.sh --install openjdk11 --target $JAVA_HOME
+  - # do stuff with open OpenJDK 11
