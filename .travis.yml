@@ -10,4 +10,4 @@ mvn sonar:sonar \
   -Dsonar.projectKey=AssayeAssefa_SonarTest \
   -Dsonar.organization=assayeassefa-github \
   -Dsonar.host.url=https://sonarcloud.io \
-  -Dsonar.login=b5ca1c306e75bc3bb1d127693636b7fb44be67c5
+  -Dsonar.login=$SONAR_TOKEN
